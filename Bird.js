@@ -1,16 +1,15 @@
-class Box {
+class Bird {
 
     constructor(x,y){
 
         var boun = {
             restitution : 1,
-            friction : 2,
-            density : 2
+            density : 3
         }
 
-        this.body = Bodies.rectangle(x,y,70,70,boun);
-        this.width = 70;
-        this.height = 70;
+        this.body = Bodies.rectangle(x,y,60,60,boun);
+        this.width = 60;
+        this.height = 60;
         World.add(myWorld,this.body); 
     
     }   
@@ -20,8 +19,11 @@ class Box {
         var pos = this.body.position;
         var angle = this.body.angle;
 
+        pos.x = mouseX;
+        pos.y = mouseY;
+ 
         push();
-        fill("yellow");
+        fill("red");
         translate(pos.x,pos.y);
         rotate(angle);
         rectMode(CENTER);

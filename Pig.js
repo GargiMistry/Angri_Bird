@@ -3,7 +3,8 @@ class Pig {
     constructor(x,y){
 
         var boun = {
-            restitution : 1
+            restitution : 1,
+            density : 2
         }
 
         this.body = Bodies.rectangle(x,y,60,60,boun);

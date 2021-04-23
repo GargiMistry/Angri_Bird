@@ -1,6 +1,6 @@
-class Box {
+class Log{
 
-    constructor(x,y){
+    constructor(x,y,height,angle){
 
         var boun = {
             restitution : 1,
@@ -8,9 +8,10 @@ class Box {
             density : 2
         }
 
-        this.body = Bodies.rectangle(x,y,70,70,boun);
-        this.width = 70;
-        this.height = 70;
+        this.body = Bodies.rectangle(x,y,20,height,boun);
+        this.width = 20;
+        this.height = height;
+        Matter.Body.setAngle(this.body,angle)
         World.add(myWorld,this.body); 
     
     }   
@@ -21,7 +22,7 @@ class Box {
         var angle = this.body.angle;
 
         push();
-        fill("yellow");
+        fill("orange");
         translate(pos.x,pos.y);
         rotate(angle);
         rectMode(CENTER);
